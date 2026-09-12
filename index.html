@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ParkiGo: MVP académico para encontrar y reservar parqueaderos antes de llegar." />
+  <title>ParkiGo | Tu parqueadero, más cerca</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="ParkiGo, inicio">
+        <img src="assets/logo.svg" alt="ParkiGo" />
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#validacion">Validación</a>
+        <a class="nav-cta" href="#reservar">Buscar parqueadero</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">MVP · Smart Cities / Servicios Urbanos</span>
+          <h1>Encuentra y reserva parqueadero antes de llegar</h1>
+          <p class="hero-lead">
+            ParkiGo te ayuda a comparar opciones cercanas, conocer el precio y solicitar una reserva
+            desde el celular para ahorrar tiempo y evitar vueltas innecesarias.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#reservar">Buscar parqueadero</a>
+            <a class="button ghost" href="#validacion">Ver validación</a>
+          </div>
+          <div class="trust-row" aria-label="Beneficios rápidos">
+            <span>✓ Sin descargas</span>
+            <span>✓ Precio visible</span>
+            <span>✓ Confirmación simulada</span>
+          </div>
+        </div>
+
+        <aside class="search-card" id="reservar" aria-labelledby="search-title">
+          <div class="card-kicker">Prueba el MVP</div>
+          <h2 id="search-title">¿Dónde necesitas parqueadero?</h2>
+          <form id="parking-form">
+            <label>
+              Zona o destino
+              <input id="zona" name="zona" type="text" placeholder="Ej. Chapinero, Bogotá" required />
+            </label>
+            <div class="form-row">
+              <label>
+                Fecha
+                <input id="fecha" name="fecha" type="date" required />
+              </label>
+              <label>
+                Hora
+                <input id="hora" name="hora" type="time" required />
+              </label>
+            </div>
+            <label>
+              Vehículo
+              <select id="vehiculo" name="vehiculo" required>
+                <option value="">Selecciona</option>
+                <option>Carro</option>
+                <option>Motocicleta</option>
+              </select>
+            </label>
+            <button class="button primary full" type="submit">Ver opciones disponibles</button>
+          </form>
+          <p class="microcopy">Demo académica: la disponibilidad y la reserva se simulan con datos de prueba.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="beneficios">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Beneficios</span>
+          <h2>Menos tiempo buscando, más tiempo para ti</h2>
+          <p>Tres resultados concretos pensados para un consumidor práctico.</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <div class="icon">⏱</div>
+            <h3>Ahorra tiempo</h3>
+            <p>Consulta opciones antes de llegar y evita recorrer varias calles buscando un cupo.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="icon">💳</div>
+            <h3>Conoce el precio</h3>
+            <p>Compara tarifas estimadas y toma una decisión con mayor claridad.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="icon">✓</div>
+            <h3>Solicita tu reserva</h3>
+            <p>Envía una solicitud en pocos pasos y recibe una confirmación simulada inmediata.</p>
+          </article>
+        </div>
+        <div class="incentive">
+          <div>
+            <strong>Incentivo de validación</strong>
+            <span>Primera reserva sin tarifa de servicio dentro de la prueba del MVP.</span>
+          </div>
+          <a class="button secondary" href="#reservar">Probar ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="como-funciona">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Método Mago de Oz</span>
+          <h2>Así funciona la experiencia</h2>
+          <p>El cliente ve una experiencia digital, mientras el proceso de validación puede gestionarse manualmente.</p>
+        </div>
+        <div class="steps">
+          <article><span>1</span><h3>Indica tu destino</h3><p>Escribe la zona, fecha, hora y tipo de vehículo.</p></article>
+          <article><span>2</span><h3>Compara opciones</h3><p>El MVP muestra alternativas de prueba con precio y distancia.</p></article>
+          <article><span>3</span><h3>Solicita la reserva</h3><p>El sistema registra tu intención y genera una confirmación de demostración.</p></article>
+        </div>
+
+        <div id="results-panel" class="parking-results hidden" aria-live="polite">
+          <div class="results-header">
+            <div>
+              <span class="eyebrow">Opciones de prueba</span>
+              <h3 id="results-title">Parqueaderos disponibles</h3>
+            </div>
+            <button class="text-button" id="close-results" type="button">Cerrar</button>
+          </div>
+          <div id="parking-options" class="parking-options"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="validacion">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Validación de idea</span>
+          <h2>Cuéntanos qué piensas de ParkiGo</h2>
+          <p>Estas son las cuatro preguntas solicitadas para validar el MVP.</p>
+        </div>
+
+        <div class="validation-grid">
+          <form id="survey-form" class="survey-card">
+            <h3>Encuesta de validación</h3>
+            <label>
+              1. ¿Cuánto pagarías por este servicio?
+              <select id="pago" name="pago" required>
+                <option value="">Selecciona</option>
+                <option value="0">$0 COP</option>
+                <option value="1000">$1.000 COP</option>
+                <option value="2000">$2.000 COP</option>
+                <option value="3000">$3.000 COP</option>
+                <option value="5000">$5.000 COP o más</option>
+              </select>
+            </label>
+            <label>
+              2. ¿Cómo resuelves este problema hoy?
+              <textarea id="actual" name="actual" rows="3" placeholder="Ej. recorro la zona hasta encontrar un parqueadero..." required></textarea>
+            </label>
+            <label>
+              3. ¿Qué es lo que MÁS te gusta?
+              <textarea id="gusta" name="gusta" rows="3" placeholder="Ej. poder conocer disponibilidad y precio..." required></textarea>
+            </label>
+            <label>
+              4. ¿Qué cambiarías?
+              <textarea id="cambiaria" name="cambiaria" rows="3" placeholder="Ej. agregaría filtros por precio..." required></textarea>
+            </label>
+            <button class="button primary full" type="submit">Enviar respuesta</button>
+            <p id="survey-message" class="form-message" role="status"></p>
+          </form>
+
+          <aside class="metrics-card">
+            <div class="card-kicker">Resultados cargados</div>
+            <h3>Muestra de validación</h3>
+            <p class="notice">
+              Incluye 10 respuestas <strong>simuladas para demostración académica</strong>.
+              Las respuestas reales que envíes desde este navegador se agregan localmente.
+            </p>
+            <div class="metric-grid">
+              <div><strong id="metric-total">10</strong><span>respuestas</span></div>
+              <div><strong id="metric-pay">0%</strong><span>pagaría ≥ $2.000</span></div>
+              <div><strong id="metric-average">$0</strong><span>pago promedio</span></div>
+              <div><strong id="metric-like">—</strong><span>beneficio más citado</span></div>
+            </div>
+            <button class="button ghost dark full" id="export-csv" type="button">Exportar respuestas CSV</button>
+          </aside>
+        </div>
+
+        <details class="responses-box">
+          <summary>Ver respuestas de las 10 personas de demostración</summary>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Persona</th>
+                  <th>¿Cuánto pagaría?</th>
+                  <th>¿Cómo lo resuelve hoy?</th>
+                  <th>¿Qué le gusta?</th>
+                  <th>¿Qué cambiaría?</th>
+                </tr>
+              </thead>
+              <tbody id="responses-body"></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section alt" id="conclusion">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Hipótesis de valor</span>
+          <h2>¿Qué estamos validando?</h2>
+        </div>
+        <blockquote>
+          “Creemos que los conductores urbanos pagarán una tarifa de servicio de $2.000 COP por reservar
+          un parqueadero desde ParkiGo porque podrán ahorrar tiempo, evitar recorridos innecesarios y asegurar
+          un espacio antes de llegar.”
+        </blockquote>
+        <p class="foot-note">
+          Este sitio es un MVP académico. No procesa pagos ni reserva parqueaderos reales.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close" type="button" aria-label="Cerrar">×</button>
+      <span class="success-badge">✓</span>
+      <h2 id="booking-title">Solicitud registrada</h2>
+      <p id="booking-copy"></p>
+      <div class="booking-code" id="booking-code"></div>
+      <p class="microcopy">Demostración del Método Mago de Oz: no existe una reserva comercial real.</p>
+      <button class="button primary full" id="modal-ok" type="button">Entendido</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-grid">
+      <img src="assets/logo-white.svg" alt="ParkiGo" />
+      <p>MVP académico · ACA Plan de Negocio 2026</p>
+      <a href="docs/wireframe.svg">Ver wireframe</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

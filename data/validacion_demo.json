@@ -1,0 +1,72 @@
+[
+  {
+    "id": "P01",
+    "pago": 2000,
+    "actual": "Recorro la zona hasta encontrar un parqueadero disponible.",
+    "gusta": "Ahorrar tiempo y conocer el precio antes de llegar.",
+    "cambiaria": "Agregaría filtros por precio y distancia."
+  },
+  {
+    "id": "P02",
+    "pago": 3000,
+    "actual": "Uso Google Maps y pregunto en parqueaderos cercanos.",
+    "gusta": "Poder comparar opciones cercanas desde el celular.",
+    "cambiaria": "Mostraría fotos del parqueadero."
+  },
+  {
+    "id": "P03",
+    "pago": 2000,
+    "actual": "Llego con tiempo y busco un parqueadero al azar.",
+    "gusta": "La posibilidad de reservar antes de llegar.",
+    "cambiaria": "Añadiría calificaciones de otros usuarios."
+  },
+  {
+    "id": "P04",
+    "pago": 1000,
+    "actual": "Pregunto a conocidos o vigilantes de la zona.",
+    "gusta": "Ver ubicación, precio y disponibilidad en un solo lugar.",
+    "cambiaria": "Incluiría más opciones para motocicletas."
+  },
+  {
+    "id": "P05",
+    "pago": 2000,
+    "actual": "Busco parqueaderos en Google cuando ya estoy cerca.",
+    "gusta": "Evitar dar vueltas buscando un cupo.",
+    "cambiaria": "Añadiría navegación hasta la entrada exacta."
+  },
+  {
+    "id": "P06",
+    "pago": 3000,
+    "actual": "Uso el parqueadero que conozco aunque quede lejos.",
+    "gusta": "La comodidad de asegurar un espacio previamente.",
+    "cambiaria": "Incluiría pagos digitales dentro de la plataforma."
+  },
+  {
+    "id": "P07",
+    "pago": 2000,
+    "actual": "Comparo algunos parqueaderos cuando llego a la zona.",
+    "gusta": "Conocer el precio sin tener que preguntar en cada lugar.",
+    "cambiaria": "Agregaría promociones para usuarios frecuentes."
+  },
+  {
+    "id": "P08",
+    "pago": 0,
+    "actual": "Prefiero buscar personalmente para no pagar una comisión.",
+    "gusta": "La facilidad para encontrar opciones en una sola página.",
+    "cambiaria": "Mantendría una opción gratuita sin tarifa de reserva."
+  },
+  {
+    "id": "P09",
+    "pago": 2000,
+    "actual": "Dejo el carro en el primer parqueadero que encuentro.",
+    "gusta": "Ahorrar tiempo y reducir el estrés de llegar tarde.",
+    "cambiaria": "Mostraría la seguridad y horarios de cada parqueadero."
+  },
+  {
+    "id": "P10",
+    "pago": 3000,
+    "actual": "Busco por internet y llamo para confirmar si hay cupo.",
+    "gusta": "Tener una confirmación rápida de la solicitud.",
+    "cambiaria": "Añadiría cancelación sencilla y soporte por WhatsApp."
+  }
+]
